@@ -4,7 +4,8 @@ import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 import 'package:chat_bubbles/chat_bubbles.dart';
 
-const apiKey = 'AIzaSyAebuVd7d_d0VRy4m8OPBHYW4TbaNviADE';
+import 'api_key.dart';
+
 
 class Home extends StatefulWidget {
   const Home({
@@ -141,9 +142,6 @@ class _TextWithImageState extends State<TextWithImage> {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         child:
-                            // AspectRatio(
-                            //   aspectRatio: 16 / 9,
-                            // child:
                             Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
@@ -158,7 +156,6 @@ class _TextWithImageState extends State<TextWithImage> {
                           ],
                         ),
                       ),
-                    // ),
                     BubbleSpecialThree(
                       text: textAndImageChat[index]["text"],
                       color: textAndImageChat[index]["role"] == 'User'
@@ -215,9 +212,9 @@ class _TextWithImageState extends State<TextWithImage> {
                 IconButton(
                   icon: loading
                       ? const Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: CircularProgressIndicator(strokeWidth: 2),
-                      )
+                          padding: EdgeInsets.all(8.0),
+                          child: CircularProgressIndicator(strokeWidth: 2),
+                        )
                       : Icon(
                           Icons.send,
                           color: Theme.of(context).colorScheme.primary,
